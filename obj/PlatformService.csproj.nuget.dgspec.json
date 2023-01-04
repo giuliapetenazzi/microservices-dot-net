@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Giulia\\Documents\\Microservices\\PlatformService\\PlatformService.csproj": {}
+    "C:\\Users\\Giulia\\Documents\\Microservices\\microservices-dot-net\\PlatformService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Giulia\\Documents\\Microservices\\PlatformService\\PlatformService.csproj": {
+    "C:\\Users\\Giulia\\Documents\\Microservices\\microservices-dot-net\\PlatformService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Giulia\\Documents\\Microservices\\PlatformService\\PlatformService.csproj",
+        "projectUniqueName": "C:\\Users\\Giulia\\Documents\\Microservices\\microservices-dot-net\\PlatformService.csproj",
         "projectName": "PlatformService",
-        "projectPath": "C:\\Users\\Giulia\\Documents\\Microservices\\PlatformService\\PlatformService.csproj",
+        "projectPath": "C:\\Users\\Giulia\\Documents\\Microservices\\microservices-dot-net\\PlatformService.csproj",
         "packagesPath": "C:\\Users\\Giulia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Giulia\\Documents\\Microservices\\PlatformService\\obj\\",
+        "outputPath": "C:\\Users\\Giulia\\Documents\\Microservices\\microservices-dot-net\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Giulia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,6 +53,8 @@
               "version": "[7.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.1, )"
             },
