@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections.Generic;
 using AutoMapper;
 using CommandsService.Data;
@@ -35,6 +35,7 @@ namespace CommandsService.Controllers
 
             return Ok(_mapper.Map<IEnumerable<CommandReadDto>>(commands));
         }
+        
 
         [HttpGet("{commandId}", Name = "GetCommandForPlatform")]
         public ActionResult<CommandReadDto> GetCommandForPlatform(int platformId, int commandId)
@@ -79,4 +80,3 @@ namespace CommandsService.Controllers
 
     }
 }
-*/
