@@ -32,6 +32,8 @@ builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 
+builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 Console.WriteLine($"--> CommandService Endpoint {builder.Configuration["CommandService"]}");
