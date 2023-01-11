@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections.Generic;
 using CommandsService.Models;
 using CommandsService.SyncDataServices.Grpc;
@@ -11,6 +11,8 @@ namespace CommandsService.Data
     {
         public static void PrepPopulation(IApplicationBuilder applicationBuilder)
         {
+            Console.WriteLine("--> PrepPopulation...");
+            //no dep inj in static class
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
                 var grpcClient = serviceScope.ServiceProvider.GetService<IPlatformDataClient>();
@@ -36,4 +38,3 @@ namespace CommandsService.Data
         }
     }
 }
-*/

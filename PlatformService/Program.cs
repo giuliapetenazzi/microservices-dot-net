@@ -50,22 +50,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.UseRouting();
     app.UseAuthorization();
-    app.UseEndpoints(endpoints => {
-        endpoints.MapControllers();
-    });
 }
+
+app.UseEndpoints(endpoints => {
+    endpoints.MapControllers();
+    app.MapGrpcService<GrpcPlatformService>();
+    app.MapGet("/protos/platforms.proto", async context =>
+        {
+            await context.Response.WriteAsync(System.IO.File.ReadAllText("Protos/platforms.proto"));
+        }
+    );
+});
 
 
 app.UseHttpsRedirection();
-
-app.MapControllers();
-app.MapGrpcService<GrpcPlatformService>();
-
-app.MapGet("/protos/platforms.proto", async context =>
-    {
-        await context.Response.WriteAsync(System.IO.File.ReadAllText("Protos/platforms.proto"));
-    }
-);
 
 PrepDb.PrepPopulation(app, app.Environment.IsProduction());
 Console.WriteLine("--> Prepared Population...");
