@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using PlatformService.SyncDataServices.Http;
 using Microsoft.Extensions.Configuration;
 using PlatformService.AsyncDataServices;
+using PlatformService.SyncDataServices.Grpc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +35,8 @@ builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 
 builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 
+builder.Services.AddGrpc();
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 Console.WriteLine($"--> CommandService Endpoint {builder.Configuration["CommandService"]}");
@@ -56,6 +59,13 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+app.MapGrpcService<GrpcPlatformService>();
+
+app.MapGet("/protos/platforms.proto", async context =>
+    {
+        await context.Response.WriteAsync(System.IO.File.ReadAllText("Protos/platforms.proto"));
+    }
+);
 
 PrepDb.PrepPopulation(app, app.Environment.IsProduction());
 Console.WriteLine("--> Prepared Population...");
