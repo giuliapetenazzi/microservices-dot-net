@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "f73756fd-f9e8-493b-894f-ec32df7a0200",
+		"name": "microservices - local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "platforms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5099/api/platforms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5099",
+					"path": [
+						"api",
+						"platforms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "platforms/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5099/api/platforms/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5099",
+					"path": [
+						"api",
+						"platforms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "platforms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Docker2\",\r\n    \"publisher\": \"Docker2\",\r\n    \"cost\": \"Free\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5099/api/platforms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5099",
+					"path": [
+						"api",
+						"platforms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "platforms c",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5223/api/c/platforms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5223",
+					"path": [
+						"api",
+						"c",
+						"platforms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commands for plat c",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"HowTo\": \"Build a .net project\",\r\n    \"CommandLine\": \"dotnet build\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5223/api/c/platforms/2/commands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5223",
+					"path": [
+						"api",
+						"c",
+						"platforms",
+						"2",
+						"commands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commands for plat c",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5223/api/c/platforms/2/commands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5223",
+					"path": [
+						"api",
+						"c",
+						"platforms",
+						"2",
+						"commands"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
